@@ -10,6 +10,7 @@ val AppFont = FontFamily.SansSerif
 
 // Set of Material typography styles to start with
 val Typography = Typography(
+    //TITLE 1
     displayLarge = TextStyle(
         fontFamily = AppFont,
         fontSize = 24.sp,
@@ -24,6 +25,7 @@ val Typography = Typography(
         letterSpacing = 0.33.sp,
         lineHeight = 28.sp
     ),
+    //TITLE 2
     headlineLarge = TextStyle(
         fontFamily = AppFont,
         fontWeight = FontWeight.Normal,
@@ -42,7 +44,9 @@ val Typography = Typography(
         fontSize = 20.sp,
         letterSpacing = 0.38.sp,
         lineHeight = 28.sp
-    ), titleLarge = TextStyle(
+    ),
+    //TITLE 3
+    titleLarge = TextStyle(
         fontFamily = AppFont,
         fontSize = 17.sp,
         fontWeight = FontWeight.Normal,
@@ -60,16 +64,50 @@ val Typography = Typography(
         fontWeight = FontWeight.SemiBold,
         letterSpacing = 0.sp,
         lineHeight = 24.sp
-    ), bodyLarge = TextStyle(
+    ),
+    // HEADLINE
+    bodyLarge = TextStyle(
         fontFamily = AppFont,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
-        lineHeight = 20.sp, letterSpacing = -0.32.sp
+        lineHeight = 20.sp,
+        letterSpacing = -0.32.sp
     ), bodyMedium = TextStyle(
         fontFamily = AppFont,
         fontWeight = FontWeight.Medium,
         fontSize = 16.sp,
-        lineHeight = 20.sp, letterSpacing = -0.32.sp
+        lineHeight = 20.sp,
+        letterSpacing = -0.32.sp
+    ),
+    //TEXT
+    labelLarge = TextStyle(
+        fontFamily = AppFont,
+        fontSize = 14.sp,
+        fontWeight = FontWeight.Normal,
+        letterSpacing = 0.sp,
+        lineHeight = 20.sp
+    ),
+    labelMedium = TextStyle(
+        fontFamily = AppFont,
+        fontSize = 14.sp,
+        fontWeight = FontWeight.SemiBold,
+        letterSpacing = 0.sp,
+        lineHeight = 20.sp
+    ),
+    // CAPTION
+    bodySmall = TextStyle(
+        fontFamily = AppFont,
+        fontSize = 14.sp,
+        fontWeight = FontWeight.Normal,
+        letterSpacing = 0.sp,
+        lineHeight = 20.sp
+    ),
+    labelSmall = TextStyle(
+        fontFamily = AppFont,
+        fontSize = 14.sp,
+        fontWeight = FontWeight.SemiBold,
+        letterSpacing = 0.sp,
+        lineHeight = 20.sp
     ),
 
 
