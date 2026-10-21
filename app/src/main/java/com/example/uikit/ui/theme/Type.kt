@@ -60,7 +60,18 @@ val Typography = Typography(
         fontWeight = FontWeight.SemiBold,
         letterSpacing = 0.sp,
         lineHeight = 24.sp
-    )
+    ), bodyLarge = TextStyle(
+        fontFamily = AppFont,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp,
+        lineHeight = 20.sp, letterSpacing = -0.32.sp
+    ), bodyMedium = TextStyle(
+        fontFamily = AppFont,
+        fontWeight = FontWeight.Medium,
+        fontSize = 16.sp,
+        lineHeight = 20.sp, letterSpacing = -0.32.sp
+    ),
+
 
 
 )
