@@ -20,8 +20,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
@@ -29,7 +31,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.uikit.R.drawable.icon_error
+import com.example.uikit.ui.theme.AppTextStyle
 import com.example.uikit.ui.theme.BorderGradient
+import com.example.uikit.ui.theme.GradientBrush
 import com.example.uikit.ui.theme.White
 
 @Composable
@@ -50,19 +54,21 @@ fun AppInput(
     }
     Column(modifier = modifier) {
         Row(
-            modifier = Modifier.width(200.dp)
-                .fillMaxWidth().height(30.dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(30.dp)
                 .background(
                     color = White, shape = RoundedCornerShape(60.dp),
                 )
                 .drawBehind {
                     drawRoundRect(
                         brush = borderColor,
-                        style = androidx.compose.ui.graphics.drawscope.Stroke(width = 1.dp.toPx()),
-                        cornerRadius = androidx.compose.ui.geometry.CornerRadius(60.dp.toPx())
+                        style = Stroke(width = 1.dp.toPx()),
+                        cornerRadius = CornerRadius(60.dp.toPx())
                     )
-                }.border(color= Color.White, shape = RoundedCornerShape(60.dp), width = 1.dp)
-                .padding(start = 10.dp, end = 13.dp,top=9.dp, bottom = 7.dp),
+                }
+                .border(color = Color.White, shape = RoundedCornerShape(60.dp), width = 1.dp)
+                .padding(start = 10.dp, end = 13.dp, top = 9.dp, bottom = 7.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             BasicTextField(
@@ -71,7 +77,7 @@ fun AppInput(
                 value = value,
                 onValueChange = onValueChange,
                 textStyle = MaterialTheme.typography.labelLarge.copy(
-                    brush = _root_ide_package_.com.example.uikit.ui.theme.GradientBrush,
+                    brush = GradientBrush,
                     fontSize = 10.sp
                 ),
                 singleLine = true,
@@ -79,9 +85,8 @@ fun AppInput(
                     if (value.isEmpty()) {
                         Text(
                             text = placeHolder,
-                            style = com.example.uikit.ui.theme.AppTextStyle.Caption_2_Regular.copy(
-                                brush = _root_ide_package_.com.example.uikit.ui.theme.GradientBrush
-                            ), fontSize = 10.sp
+                            style = AppTextStyle.Caption_2_Regular.copy(brush = GradientBrush)
+                            , fontSize = 10.sp
                         )
 
                     }
