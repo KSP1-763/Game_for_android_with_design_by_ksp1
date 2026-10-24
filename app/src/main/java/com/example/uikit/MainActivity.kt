@@ -26,10 +26,3 @@ class MainActivity : ComponentActivity() {
 
 
 
-@Preview(showBackground = true)
-@Composable
-fun AppTheme(content: @Composable ()->Unit) {
-    MaterialTheme(
-        colorScheme = LightColo
-    )
-}
