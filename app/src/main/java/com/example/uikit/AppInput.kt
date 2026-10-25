@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.MaterialTheme
@@ -34,8 +33,23 @@ import com.example.uikit.R.drawable.icon_error
 import com.example.uikit.ui.theme.AppTextStyle
 import com.example.uikit.ui.theme.BorderGradient
 import com.example.uikit.ui.theme.GradientBrush
+import com.example.uikit.ui.theme.UikitTheme
 import com.example.uikit.ui.theme.White
 
+/*
+*Компонент для ввода текста.
+*Отвечает за отоброжения поля плэйсхолдера и состояния
+@param value - Текущий текст.
+@param onValueChange - Колбэк при вводе текста.
+@param placeHolder - Текст подсказка,
+@param TrailingIcon - Иконка справа,
+@param onTrailingIconClick - Нажаите на иконку,
+@param isError - флаг ошибкм,
+@param isPassword - флаг пароля,
+
+*Дата создания:21.10.2026, изменено:25.10.2026
+* Автор: KSP1
+ */
 @Composable
 fun AppInput(
     value: String,
@@ -84,7 +98,7 @@ fun AppInput(
                 decorationBox = { innerTextField ->
                     if (value.isEmpty()) {
                         Text(
-                            text = placeHolder,
+                            text = if(isError)"Error" else placeHolder,
                             style = AppTextStyle.Caption_2_Regular.copy(brush = GradientBrush)
                             , fontSize = 10.sp
                         )
@@ -99,7 +113,7 @@ fun AppInput(
                 }
 
             )
-            if (!isError) {
+            if (isError) {
                 Box(
                     modifier = Modifier
                         .size(16.dp)
@@ -124,13 +138,13 @@ fun AppInput(
 @Preview(showBackground = true, backgroundColor = 0xffE9F0F7)
 @Composable
 fun PreviewAppInput() {
-    _root_ide_package_.com.example.uikit.ui.theme.UikitTheme {
+   UikitTheme {
         AppInput(
             modifier = Modifier.padding(20.dp),
             value = "",
             onValueChange = {},
             placeHolder = "Input Field",
-//            isError = true,
+            isError = true,
             TrailingIcon = {
                 Image(
                     painter = painterResource(id = icon_error),
