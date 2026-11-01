@@ -2,11 +2,19 @@ package com.example.uikit.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.example.uikit.R
 
-val AppFont = FontFamily.SansSerif
+val AppFont = FontFamily(
+    Font(R.font.poppins_bold, FontWeight.Bold),
+    Font(R.font.poppins_extrabold, FontWeight.ExtraBold),
+    Font(R.font.poppins_medium, FontWeight.Medium),
+    Font(R.font.poppins_semibold, FontWeight.SemiBold),
+    Font(R.font.poppins_regular, FontWeight.Normal))
+
 
 // Set of Material typography styles to start with
 val Typography = Typography(
@@ -32,13 +40,15 @@ val Typography = Typography(
         fontSize = 20.sp,
         letterSpacing = 0.38.sp,
         lineHeight = 28.sp
-    ), headlineMedium = TextStyle(
+    ),
+    headlineMedium = TextStyle(
         fontFamily = AppFont,
         fontWeight = FontWeight.SemiBold,
         fontSize = 20.sp,
         letterSpacing = 0.38.sp,
         lineHeight = 28.sp
-    ), headlineSmall = TextStyle(
+    ),
+    headlineSmall = TextStyle(
         fontFamily = AppFont,
         fontWeight = FontWeight.ExtraBold,
         fontSize = 20.sp,
@@ -52,13 +62,15 @@ val Typography = Typography(
         fontWeight = FontWeight.Normal,
         letterSpacing = 0.sp,
         lineHeight = 24.sp
-    ), titleMedium = TextStyle(
+    ),
+    titleMedium = TextStyle(
         fontFamily = AppFont,
         fontSize = 17.sp,
         fontWeight = FontWeight.Medium,
         letterSpacing = 0.sp,
         lineHeight = 24.sp
-    ), titleSmall = TextStyle(
+    ),
+    titleSmall = TextStyle(
         fontFamily = AppFont,
         fontSize = 17.sp,
         fontWeight = FontWeight.SemiBold,
@@ -72,7 +84,8 @@ val Typography = Typography(
         fontSize = 16.sp,
         lineHeight = 20.sp,
         letterSpacing = -0.32.sp
-    ), bodyMedium = TextStyle(
+    ),
+    bodyMedium = TextStyle(
         fontFamily = AppFont,
         fontWeight = FontWeight.Medium,
         fontSize = 16.sp,
@@ -111,5 +124,4 @@ val Typography = Typography(
     ),
 
 
-
-)
+    )

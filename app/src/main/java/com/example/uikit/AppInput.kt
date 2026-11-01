@@ -28,13 +28,10 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.uikit.R.drawable.icon_error
+import com.example.uikit.ui.theme.AppColor
 import com.example.uikit.ui.theme.AppTextStyle
-import com.example.uikit.ui.theme.BorderGradient
-import com.example.uikit.ui.theme.GradientBrush
 import com.example.uikit.ui.theme.UikitTheme
-import com.example.uikit.ui.theme.White
 
 /*
 *Компонент для ввода текста.
@@ -64,7 +61,7 @@ fun AppInput(
     val borderColor = if (isError) {
         SolidColor(MaterialTheme.colorScheme.error)
     } else {
-        BorderGradient
+        AppColor.BorderGradient
     }
     Column(modifier = modifier) {
         Row(
@@ -72,7 +69,7 @@ fun AppInput(
                 .fillMaxWidth()
                 .height(30.dp)
                 .background(
-                    color = White, shape = RoundedCornerShape(60.dp),
+                    color = AppColor.White, shape = RoundedCornerShape(60.dp),
                 )
                 .drawBehind {
                     drawRoundRect(
@@ -91,16 +88,16 @@ fun AppInput(
                 value = value,
                 onValueChange = onValueChange,
                 textStyle = MaterialTheme.typography.labelLarge.copy(
-                    brush = GradientBrush,
-                    fontSize = 10.sp
+                    brush = AppColor.GradientBrush,
+//                    fontSize = 10.sp
                 ),
                 singleLine = true,
                 decorationBox = { innerTextField ->
                     if (value.isEmpty()) {
                         Text(
                             text = if(isError)"Error" else placeHolder,
-                            style = AppTextStyle.Caption_2_Regular.copy(brush = GradientBrush)
-                            , fontSize = 10.sp
+                            style = AppTextStyle.Caption_2_Regular.copy(brush = AppColor.GradientBrush)
+//                            , fontSize = 10.sp
                         )
 
                     }

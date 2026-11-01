@@ -12,12 +12,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
 private val LightColorScheme = lightColorScheme(
-    primary = Accent,
-    onPrimary = White,
-    background = Background,
-    onBackground = Black,
-    error = Error,
-    secondary = Accent_inactive
+//    primary = Accent,
+//    onPrimary = White,
+//    background = Background,
+//    onBackground = Black,
+//    error = Error,
+//    secondary = Accent_inactive
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),

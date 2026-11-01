@@ -1,28 +1,32 @@
 package com.example.uikit
 
-import androidx.compose.foundation.Image
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.draggable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.uikit.ui.theme.Background
+import com.example.uikit.ui.theme.AppColor
 import com.example.uikit.ui.theme.UikitTheme
-import com.example.uikit.ui.theme.White
 
 @Composable
 fun AppCheckBox(
@@ -32,31 +36,32 @@ fun AppCheckBox(
 ) {
     val strokeColor=Color(0xffD6E5F2)
     val bgColor = if (isChecked) {
-        Background
+        AppColor.Background
     } else {
-        White
+        AppColor.White
     }
     Column(modifier = modifier) {
         Box(
             modifier = Modifier
-                .size(20.dp)
-                .shadow(
-                    elevation = 6.dp,
-                    shape = RoundedCornerShape(3.dp),
-                    ambientColor = Color(0xff8A9BBD).copy(alpha = 0.3f),
-                    spotColor = Color(0xffffffff).copy(alpha = 0.9f)
-                )
-                .background(color = bgColor, shape = RoundedCornerShape(3.dp))
-                .border(color=strokeColor, width = 0.2.dp, shape = RoundedCornerShape(3.dp)).clickable {
+                .size(14.dp)
+                .border(color= AppColor.Stroke_color_checkbox, width = 1.dp, shape = RoundedCornerShape(3.dp))
+                .background(color = Color(0xff1E1E1E), shape = RoundedCornerShape(3.dp))
+                .clickable {
                     onCheckedChange(!isChecked)
                 }, contentAlignment = Alignment.Center
         ) {
+
             if (isChecked) {
-                Image(
-                    modifier = Modifier.size(10.dp),
-                    painter = painterResource(id = R.drawable.tick),
-                    contentDescription = "path"
-                )
+                Canvas(modifier= Modifier.width(5.dp).height(7.dp)) {
+                    val path=Path().apply {
+                        moveTo(size.width * 0.1f, size.height * 0.5f)
+                        lineTo(size.width * 0.3f, size.height * 0.7f)
+                        lineTo(size.width * 1f, size.height * 0.05f)
+                    }
+                    drawPath(path=path,color= AppColor.Stroke_color_checkbox,
+                        style = Stroke(width = 1.dp.toPx(), cap = StrokeCap.Round))
+
+                }
             }
         }
 
@@ -67,7 +72,7 @@ fun AppCheckBox(
 @Composable
 fun PreviewAppCheckBox() {
     UikitTheme {
-        Row(modifier = Modifier.padding(20.dp), horizontalArrangement = Arrangement.spacedBy(9.dp)) {
+        Row(modifier = Modifier.padding(20.dp), horizontalArrangement = Arrangement.spacedBy(4.dp)) {
             AppCheckBox(
                 isChecked = true,
                 onCheckedChange = {},
