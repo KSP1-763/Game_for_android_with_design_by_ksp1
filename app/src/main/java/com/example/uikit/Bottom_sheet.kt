@@ -75,11 +75,11 @@ fun Bottom_sheet(
 fun PreviewBottom_sheet_T() {
     UikitTheme {
         Box(modifier = Modifier
-            .fillMaxWidth()
+            .fillMaxSize()
             .height(500.dp), contentAlignment = Alignment.BottomCenter
         ) {
             Bottom_sheet(title = "TEsT", isActive = true) {
-                repeat(5) {
+                repeat(50) {
                     Text(text="bnmjkl",style = MaterialTheme.typography.labelLarge.copy(brush = AppColor.GradientBrush)
 //                        style = )
                     )
