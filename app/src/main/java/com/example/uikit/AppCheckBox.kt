@@ -34,12 +34,6 @@ fun AppCheckBox(
     onCheckedChange: (Boolean) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val strokeColor=Color(0xffD6E5F2)
-    val bgColor = if (isChecked) {
-        AppColor.Background
-    } else {
-        AppColor.White
-    }
     Column(modifier = modifier) {
         Box(
             modifier = Modifier
