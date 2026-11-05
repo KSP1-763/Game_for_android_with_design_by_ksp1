@@ -51,8 +51,8 @@ import kotlin.io.path.moveTo
 @param onValueChange - Колбэк при вводе текста.
 @param placeHolder - Текст подсказка,
 @param TrailingIcon - Иконка справа,
-@param onTrailingIconClick - Нажаите на иконку,
-@param isError - флаг ошибкм,
+@param onTrailingIconClick - Нажатие на иконку,
+@param isError - флаг ошибки,
 @param isPassword - флаг пароля,
 
 *Дата создания:21.10.2026, изменено:25.10.2026
