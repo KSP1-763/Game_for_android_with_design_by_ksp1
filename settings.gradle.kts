@@ -24,4 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "uikit"
 include(":app")
- 
+include(":uikit_lib")

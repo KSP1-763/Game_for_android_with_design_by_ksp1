@@ -43,6 +43,7 @@ android {
 }
 
 dependencies {
+    implementation(project (":uikit_lib"))
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.foundation.layout)
@@ -60,16 +61,16 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
 }
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
-                from(components["release"])
-                groupId = "com.example.uikit"
-                artifactId = "uikit" //Название
-                version = "1.0.0"
-
-            }
-        }
-    }
-}
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            create<MavenPublication>("release") {
+//                from(components["release"])
+//                groupId = "com.example.uikit"
+//                artifactId = "uikit" //Название
+//                version = "1.0.0"
+//
+//            }
+//        }
+//    }
+//}
